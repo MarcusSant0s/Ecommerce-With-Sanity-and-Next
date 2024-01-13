@@ -1,8 +1,15 @@
 import React from 'react'
 
-function index() {
+const index = () => {
   return (
+    <section>
+      The banner goes here
+
     <div>index</div>
+
+and footer here
+    </section>
+    
   )
 }
 
