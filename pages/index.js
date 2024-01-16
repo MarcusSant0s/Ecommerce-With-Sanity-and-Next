@@ -1,12 +1,12 @@
 
 import React from 'react';
-import {client} from '../lib/client';
+import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
 
 const index = ({products, bannerData}) => {
   return (
     <>
-     <HeroBanner/>
+     <HeroBanner heroBanner = {bannerData.length && bannerData[0] }/>
 
     <div className='products-heading'>
       <h2>Beset Selling Products</h2>
