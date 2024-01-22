@@ -86,7 +86,7 @@ width: 100%;
   right: -8px;
   font-size: 12px;
   color: #eee;
-  background-color: #f02d34;
+  background-color: #D0637c;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -144,7 +144,7 @@ width: 100%;
 .hero-banner-container button{
    border-radius: 15px;
   padding: 10px 16px;
-  background-color: #f02d34;
+  background-color: #D0637c;
   color: white;
   border: none;
   margin-top: 40px;
@@ -202,6 +202,7 @@ text-align: end;
  color: #324d67;
 
 }
+
 .products-heading h2{
   font-size: 40px;
   font-weight: 800;
@@ -212,7 +213,7 @@ text-align: end;
 }
 .footer-banner-container{
   padding: 100px 40px;
-  background-color: #f02d34;
+  background-color: #D0637c;
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -229,7 +230,7 @@ text-align: end;
   border-radius: 15px;
   padding: 10px 16px;
   background-color: white;
-  color: red;
+  color: #D0637c;
   border: none;
   margin-top: 40px;
   font-size: 18px;
@@ -241,6 +242,7 @@ text-align: end;
   font-size: 80px;
   margin-left: 25px;
 }
+
 .banner-desc .left p{
   margin:18px;
 }
@@ -572,8 +574,8 @@ padding: 6px;
 }
 .success, .cancel{
   width: 1000px;
-margin: auto;
-margin-top: 160px;
+  margin: auto;
+  margin-top: 160px;
   background-color: #dcdcdc;
   padding: 50px;
   border-radius: 15px;
