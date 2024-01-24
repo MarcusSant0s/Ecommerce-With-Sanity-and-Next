@@ -9,10 +9,12 @@ import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 
 const Cart = () => {
+
   const cartRef = useRef();
   const {totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemsQuantity, onRemove} = useStateContext();
  
-  const handleCheckout =async () =>{
+  const handleCheckout = async () =>{
+
       const stripe = await getStripe();
 
       const response = await fetch('/api/stripe', {
@@ -21,7 +23,7 @@ const Cart = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(cartItems),
-      })
+      });
 
       if(response.statusCode === 500) return;
 
@@ -110,7 +112,7 @@ const Cart = () => {
           <div className="btn-container">
             <button type='button'
             className='btn'
-            onClick={handleCheckout()}>
+            onClick={handleCheckout}>
               Pay With Stripe
 
             </button>
