@@ -1,6 +1,3 @@
-Certainly! Here's a sample text for the README of your project that uses Stripe for payment processing, Sanity as a database, and Next.js. Feel free to modify it according to your specific project details:
-
-markdown
 
 # Project ECOMMERCE-APP
 
