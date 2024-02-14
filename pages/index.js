@@ -18,7 +18,7 @@ const index = ({ products, bannerData }) => {
       </div>
 
       <Pagination
-      // totalPages={totalPages} 
+      totalProducts={products.length} 
       />
 
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
