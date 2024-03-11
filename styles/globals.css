@@ -288,6 +288,16 @@ text-align: end;
   position: relative;
   
 }
+.pagination ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+}
+.pagination ul li{
+  list-style-type: none;
+
+}
 
 .footer-container{
   color: #324d67;
