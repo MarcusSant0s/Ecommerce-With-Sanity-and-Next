@@ -4,7 +4,7 @@ import React from 'react';
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner, Pagination } from '../components';
 
-const index = ({ products, bannerData, Page, Limit,NumberOfPages}) => {
+const index = ({ products, bannerData}) => {
 
   const router = useRouter()
 
