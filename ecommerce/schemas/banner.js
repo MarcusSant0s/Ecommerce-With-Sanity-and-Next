@@ -1,5 +1,5 @@
 export default {
-    name: 'banner',
+    name: 'banner', 
     title: 'Banner',
     type: 'document',
     fields: [

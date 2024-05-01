@@ -1,23 +1,9 @@
-import { useRouter } from 'next/router'
 import React from 'react';
 
 import { client } from '../lib/client';
-import { Product, FooterBanner, HeroBanner, Pagination } from '../components';
+import { FooterBanner, HeroBanner, Product } from '../components';
 
-const index = ({ products, bannerData}) => {
-
-  const router = useRouter()
-
-  React.useEffect(() => {
-    if (!router.query.page) {
-      router.push({
-        pathname: '/',
-        query: { page: 1, limit: 10 }
-      });
-    }
-  }, [])
-
-
+const index = ({ products, bannerData }) => {
 
   return (
     <>
@@ -32,8 +18,7 @@ const index = ({ products, bannerData}) => {
         {products?.map((product) => <Product key={product._id} product={product} />)}
       </div>
 
-      <Pagination
-      /> 
+
 
 
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
@@ -44,12 +29,13 @@ const index = ({ products, bannerData}) => {
 
 export const getServerSideProps = async () => {
 
-  const query =  `*[_type == "product"] | order(_createdAt desc)`;
+  const query = `*[_type == "product"] | order(id) [0...20]`;
   const products = await client.fetch(query);
+
 
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
-    
+
 
 
   return {
