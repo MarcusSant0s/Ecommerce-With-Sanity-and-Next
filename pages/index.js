@@ -1,25 +1,27 @@
 import React from 'react';
-
+import { useRouter } from 'next/router'
 import { client } from '../lib/client';
-import { FooterBanner, HeroBanner, Product } from '../components';
+import { FooterBanner, HeroBanner, ProductsHandle} from '../components';
 
 const index = ({ products, bannerData }) => {
+
+  
+  const router = useRouter()
+
+  React.useEffect(() => {
+    if (!router.query.page) {
+      router.push({
+        pathname: '/',
+        query: { page: 0, limit: 3 }
+      });
+    }
+  }, [])
 
   return (
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
 
-      <div className='products-heading'>
-        <h2>Beset Selling Products</h2>
-        <p>Speakers of many variations</p>
-      </div>
-
-      <div className='products-container'>
-        {products?.map((product) => <Product key={product._id} product={product} />)}
-      </div>
-
-
-
+      <ProductsHandle productsInfo={products} />
 
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>
@@ -29,7 +31,7 @@ const index = ({ products, bannerData }) => {
 
 export const getServerSideProps = async () => {
 
-  const query = `*[_type == "product"] | order(id) [0...20]`;
+  const query = `*[_type == "product"] | order(createdAt desc)`;
   const products = await client.fetch(query);
 
 
