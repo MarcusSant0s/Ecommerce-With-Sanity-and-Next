@@ -1,3 +1,21 @@
+:root{
+  --bs-white: #ffffff;
+  --bs-pink-100: #ebdfd4;
+  --bs-pink-200: #F2B3B3;
+  --bs-pink-300: #D96C80;
+  --bs-pink-400: #BF2C53;
+  --bs-pink-500: #8C2E40;
+  --bs-accent:#baa680;
+
+  --ff: "DM Sans", sans-serif;
+  --h1: bold max(54px, 6vw)/ max(64px, 5vw) var(--ff);
+  --h2: bold max(36px, 4vw)/ max(48px, 4vw) var(--ff);
+  --h3: bold max(24px, 3vw)/ max(30px, 3vw) var(--ff);
+  --p: max(18px, 2vw)/ max(30px, 2vw) var(--ff);
+  --transition: 0.3 ease-in-out;
+}
+
+
 html,
 body,
 * {
@@ -8,25 +26,16 @@ body,
   box-sizing: border-box;
 
 }
-
-:root {
-  --colorprimary: #B92F50;
-  --colorsecondary: #EDDCCA;
-  --coloraccent: #DE7B54;
-  --ff: "DM Sans", sans-serif;
-  --h1: bold max(54px, 6vw)/ max(64x, 5vw) var(--ff);
-  --h2: bold max(36px, 4vw)/ max(48px, 4vw) var(--ff);
-  --h3: bold max(24px, 3vw)/ max(30px, 3vw) var(--ff);
-  --p: max(18px, 2vw)/ max(30px, 2vw) var(--ff);
-  --transition: 0.3 ease-in-out;
+html{ 
+  width: 100vw;
+ 
 }
-
+  
 ::-webkit-scrollbar {
   width: 0px;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -38,7 +47,7 @@ a {
 }
 
 
-
+/*
 .search-bar {
   display: grid;
   grid-template-columns: 95% 1fr;
@@ -62,29 +71,24 @@ a {
   box-shadow: 33px 21px 85px 0px rgba(0, 0, 0, 0.42);
 }
 
-/* 
-.search-bar:active {
-  transform: scale(0.95);
-}
+*/
 
-.search-bar:focus {
-  border: 2px solid grey;
-}
-.search-bar > *{
+ .container-fluid {
+  background-color: var(--bs-white);
+  border-bottom: 0.1px inset rgb(0, 0, 0);
+  border-bottom-right-radius: 10px;
+  box-shadow: 2px 3px 15px rgba(51, 51, 51, 0.1);
+
   
-background: none;
-  border: none;
-
 }
+.navbar{
+ position: absolute;
+ padding: 0;
+ background-color: var(--bs-white);
 
-.search-bar > button{
-  border-left: 1.25px solid #D4D4D4 ;
-  padding-left: 0.4em;
-  justify-self: flex-end; --colorsecondary
-} */
 
-.navbar {
-  background-color: var(--colorsecondary);
+
+ 
 }
 
 .marquee-text {
@@ -129,32 +133,28 @@ span.text-red {
   margin-left: 6px;
 }
 
-.logo {
-  color: gray;
-  font-size: 18px;
+
+
+ .navbar-brand img{
+
 
 }
-.nav-link{
-  color:var(--coloraccent);
+
+.nav-link {
+  color: var(--coloraccent);
 }
+
 .navbar-icons {
   margin-right: 1rem;
   display: flex;
+  
+
+}
+
+
+
  
-}
 
-.navbar-icons button {
-  margin: auto 0.2em;
-  font-size: 25px;
-  color: var(--coloraccent);
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
-
-.navbar-icons button:hover {
-  transform: scale(1.1, 1.1);
-}
 
 .cart-icon {
   position: relative;
@@ -164,6 +164,7 @@ span.text-red {
 
 .cart-item-qty {
   position: absolute;
+
   right: -8px;
   font-size: 12px;
   color: #eee;
@@ -223,7 +224,8 @@ span.text-red {
   height: 500px;
   line-height: 0.9;
   width: 100%;
-
+  top:76px ;
+  
 }
 
 .hero-banner-container .beats-solo {
@@ -308,7 +310,7 @@ span.text-red {
 }
 
 .footer-banner-container {
-  padding: 100px 40px;
+  padding: 30px 40px;
   background-color: var(--colorsecondary);
   border-radius: 15px;
   position: relative;
@@ -319,9 +321,11 @@ span.text-red {
   margin-top: 120px;
 }
 
+
 .banner-desc {
   display: flex;
   justify-content: space-between;
+
 }
 
 .banner-desc button {
@@ -348,13 +352,14 @@ span.text-red {
 
 .footer-banner-image {
   position: absolute;
-  /* top: -35%;
-  left: 8%; */
   top: -25%;
   left: 25%;
 }
 
 .banner-desc .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   line-height: 1.4;
 }
 
@@ -791,6 +796,170 @@ span.text-red {
 .product-max-qty {
   margin-top: 10px;
 }
+
+
+
+
+.sticky {
+  position: fixed;
+  z-index: 10;
+}
+
+.navbar--container {
+  top:4.225rem;
+  background:  var(--bs-white);
+  height: 11em;
+  width: max(54px, 6vw)/ max(64px, 5vw);
+  padding: 0.3em 0.3em 0em 0.3em;
+  box-shadow: 2px 3px 20px rgba(51, 51, 51, 0.1);
+  border-bottom: 0.1px inset rgba(0, 0, 0, 0.466);
+  border-right: 0.1px inset rgba(0, 0, 0, 0.466);
+
+ 
+
+}
+
+.close {
+  transform: translateX(-300px);
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+.icon-container svg{
+  font-size:30px  ;
+  color: rgba(0, 0, 0, 0.589);
+  stroke-width: 0.5px;
+}
+.icon-container svg:hover {
+  transform: scale(1.1, 1.1);
+  color: rgba(0, 0, 0, 0.705);
+}
+
+
+ 
+.navbar--icon:hover, .nav--open-icon:hover {
+  color: var(--bs-pink-300);
+
+  cursor: pointer;
+}
+
+.navbar--title {
+  text-align: center;
+  margin-left: 0.125em
+}
+.navbar--title h4 {
+  writing-mode: vertical-rl;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.nav--open {
+  height: 100vh;
+  width: 300px;
+  background: #ffffff;
+  transition: all 0.4s ease-out;
+  opacity: 1;
+  box-shadow: 2px 2px 15px rgba(51, 51, 51, 0.1);
+}
+
+.nav--open-icon {
+ 
+  text-align: right;
+  padding: 20px;
+}
+.nav--open-icon i {
+  font-size: 1.8em;
+  color: #92BFB1;
+}
+.nav--open-icon i:hover {
+  color: #333333;
+  cursor: pointer;
+}
+.nav--open-svg{
+  font-size: 2em;
+
+}
+
+.nav--open-title {
+  font-family: "Playfair Display", serif;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin-top: 35%;
+}
+
+.nav--open-menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.nav--open-menu a{
+  color: var(--bs-pink-300);
+	transition: all 0.3s;
+	position: relative;
+  transition: all 0.3s;
+	position: relative;
+}
+
+.nav--open-menu a::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: var(--bs-pink-300);
+	border-bottom-color: var(--bs-pink-300);
+	transform: scale(0.1, 1);
+}
+
+a:hover span {
+	letter-spacing: 2px;
+}
+
+
+a:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.1);
+}
+
+.nav--open-menu a span{
+	transition: all 0.3s;
+  font-size: 2em;
+  font-weight: 100;
+  font-family: "Playfair Display", serif;
+  padding: 15px 0;
+  color: var(--bs-pink-300);
+}
+a:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+}
+ 
+    
 
 @media screen and (max-width:800px) {
   .hero-banner-container {

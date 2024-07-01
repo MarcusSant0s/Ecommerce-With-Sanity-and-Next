@@ -1,11 +1,15 @@
 import React from 'react'
 import Link from 'next/link';
 import { urlFor } from '../lib/client';
+import LottieAnimation from './LottieAnimation';
 
 const FooterBanner = ({footerBanner:{discount, largeText1, largeText2, saleTime, smallText,
 midText, product, buttonText, image, desc}}) => {
   return (
-    <div className='footer-banner-container'>
+    <div className='footer-banner-container '>
+
+
+
       <div className='banner-desc'>
         <div className='left'>
           <p>{discount}</p> 
@@ -30,6 +34,8 @@ midText, product, buttonText, image, desc}}) => {
             className='footer-banner-image' 
             alt="footer-image" />
       </div>
+
+ 
     </div>
   )
 }
