@@ -1,5 +1,5 @@
  
-import { Product } from '../components';
+import { Product, Pagination } from '../components';
 import chunk from 'lodash/chunk'
 import React from 'react'
 import { useRouter } from 'next/router'
@@ -36,15 +36,9 @@ const ProductsHandle = ({ productsInfo }) => {
             {Products[page]?.map((product) => <Product key={product._id} product={product} />)} 
           </div>
 
-          {router.query.page > 0 && (
-            <button onClick={() => changePage('previous')}>Página anterior</button>
-            
-          )}
-          {router.query.page < (Products.length -1) && (
-         <button onClick={() => changePage('next')}>Próxima página</button>
-            
-          )}
+ 
           
+<Pagination productsLength={Products.length}/>
        
       
     </div>
