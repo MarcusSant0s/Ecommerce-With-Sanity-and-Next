@@ -12,7 +12,7 @@ const index = ({ products, bannerData }) => {
     if (!router.query.page) {
       router.push({
         pathname: '/',
-        query: { page: 0, limit: 3 }
+        query: { page: 0, limit: 10 }
       });
     }
   }, [])
