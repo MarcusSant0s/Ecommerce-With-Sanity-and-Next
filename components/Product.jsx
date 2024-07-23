@@ -7,16 +7,24 @@ const Product = ({ product: {image, name, slug, price} }) => {
     <div>
       <Link href={`/product/${slug.current}`}>
         <div className='product-card'>
-          <img 
-          src={urlFor(image && image[0])}
-          width={150}
-          height={150}
+          <div className='product-header'>
+            <img 
+            src={urlFor(image && image[0])}
+            className='product-image'
+          
+          />
 
-          className='product-image'
+            <div className='product-price'>
+              <span>-35%</span>
+              <p > <span className='sale-price'> R${price}</span> <span className='discount'> R$20</span></p>
+          
+            </div>
+          </div>
+        <p className='product-name'> <strong>{name}</strong>
+         <br></br> 
+         Cat
+        </p>
         
-        />
-        <p className='product-name'>{name}</p>
-        <p className='product-price'>R${price}</p>
           
         </div>
       </Link>

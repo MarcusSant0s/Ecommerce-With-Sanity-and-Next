@@ -37,7 +37,7 @@ const ProductsHandle = ({ productsInfo }) => {
 
 
   return (
-    <div>
+    <div className='products-section'>
       <div className='products-heading'>
         <h2>Beset Selling Products</h2>
         <p>Speakers of many variations</p>

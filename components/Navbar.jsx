@@ -86,7 +86,7 @@ const Navbar = () => {
         <div className="nav--open-menu">
         <a href=""><span>Sobre</span></a>
         <a href=""><span>Produt</span></a>
-        <a href=""><span>macaco</span></a>
+        <a href=""><span>Exempl</span></a>
 
 
         <div className="nav--open-svg">
