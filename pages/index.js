@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router'
 import { client } from '../lib/client';
+ 
 import { FooterBanner, HeroBanner, ProductsHandle} from '../components';
 
 const index = ({ products, bannerData }) => {
@@ -23,7 +24,8 @@ const index = ({ products, bannerData }) => {
 
       <ProductsHandle productsInfo={products} />
 
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+    { // <FooterBanner footerBanner={bannerData && bannerData[0]} />
+    } 
     </>
 
   )

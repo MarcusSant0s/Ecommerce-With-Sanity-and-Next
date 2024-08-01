@@ -13,13 +13,12 @@ const Product = ({ product: {image, name, slug, price} }) => {
             className='product-image'
           
           />
-
-            <div className='product-price'>
+          </div>
+          <div className='product-price'>
               <span>-35%</span>
               <p > <span className='sale-price'> R${price}</span> <span className='discount'> R$20</span></p>
           
             </div>
-          </div>
         <p className='product-name'> <strong>{name}</strong>
          <br></br> 
          Cat

@@ -3,8 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from 'react'
 import { Toaster } from 'react-hot-toast';
 import { Layout } from '../components';
-import { StateContext } from '../context/StateContext';
-
+import { StateContext } from '../context/StateContext'; 
 
 
 import '../styles/globals.css'
