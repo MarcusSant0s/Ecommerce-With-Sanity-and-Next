@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { AiOutlineShopping } from 'react-icons/ai';
 import Image from 'next/image';
-
+import Link from 'next/link';
 
 import { Cart } from './'
 import { CiHeart } from "react-icons/ci";
@@ -61,7 +61,11 @@ const Navbar = () => {
 
 
 
-          <a href='#' className="navbar-brand"> <Image src={logo} height={50} width={50} alt="some text" fill={true} /></a>
+          <Link href="/" className="navbar-brand"> 
+            <div>
+            <Image src={logo} height={50} width={50} alt="some text" fill={true} />
+            </div>
+          </Link>
 
 
           <div className="d-flex ">
@@ -105,6 +109,7 @@ const Navbar = () => {
           <a href=""><span>Brincos</span></a>
           <a href=""><span>Colares</span></a>
           <a href=""><span>Anél</span></a>
+          <a href=""><span>Fale Conosco</span></a>
 
         </div>
       </div>

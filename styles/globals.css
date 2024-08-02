@@ -551,7 +551,7 @@ span.text-red {
 
 .cart-num-items {
   margin-left: 10px;
-  color: #f02d34;
+  color: var(--bs-pink-400);
 }
 
 .empty-cart {
@@ -651,7 +651,7 @@ span.text-red {
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: var(--bs-pink-400);
   color: #fff;
   cursor: pointer;
   transform: scale(1, 1);
@@ -665,8 +665,9 @@ span.text-red {
 .product-detail-container {
   display: flex;
   gap: 40px;
-  margin: 40px;
-  margin-top: 60px;
+  margin:0px 40px  40px 40px;
+  padding-top:10rem;
+ 
   color: #324d67;
 
 }
@@ -773,9 +774,9 @@ span.text-red {
   width: 200px;
 
   padding: 10px 20px;
-  background-color: #f02d34;
-  color: white;
-  border: none;
+  background-color: #CCFFCD;
+  color: #49dd4b;
+  border: #49dd4b solid 1px;
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
@@ -833,6 +834,11 @@ span.text-red {
   margin-top: 20px;
 
 }
+ 
+.maylike-products-container .product-image {
+ width: 20vw;
+}
+
 
 .max-qty {
   font-weight: 500;
@@ -1108,7 +1114,10 @@ a:hover::after {
   height: 40px;
   width: 40px;
 }
+.marquee .product-image {
+  max-width:278px;
 
+}
 
 
 @media only screen and (max-width: 480px) {
@@ -1315,6 +1324,11 @@ a:hover::after {
 
 
 @media only screen and (max-width: 610px) {
+  .product-detail-container {
+ margin-top: 0; 
+ padding-top: 6rem;
+  
+  }
   .product-container {
     display: grid;
     grid-template-columns: repeat(2, 40vw);
@@ -1373,7 +1387,14 @@ a::after {
   padding: 15px 0;
   color: var(--bs-pink-300);
 }
- 
+.marquee .product-card {
+  width:165px;
+
+}
+.marquee .product-image {
+  width:165px;
+
+}
 }
 
 @media only screen and (min-width: 611px) {
@@ -1388,15 +1409,12 @@ a::after {
   opacity: 1;
   transform: translateX(0);
 }
-.nav--open{
-  box-shadow: none;
-  width: 70vw;
-}
+
 .nav--open-menu{
   display: flex;
   text-align: center;
   flex-direction: row;
-  justify-content: space-evenly;
+ gap: 2rem;
  margin: 0 auto;
  align-items: center;
  
@@ -1413,11 +1431,15 @@ a::after {
 } 
 
  .nav--open{
-  height: 66px;
-  margin: 0 auto;
- }
- nav--open-menu {
-
+  height: 55px;
+  margin-left: 10vw;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: none;
+  border: #33333375 solid 0.1px;
+  border-top: 0;
+ 
+ } 
 }
-}
-
