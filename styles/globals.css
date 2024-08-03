@@ -913,6 +913,7 @@ span.text-red {
 
 .sticky {
   position: sticky;
+  top: 0;
   z-index: 10;
 }
 
@@ -1439,7 +1440,7 @@ a::after {
   justify-content: center;
   border-radius: 0 0 1rem 1rem;
   box-shadow: none;
-  border: #33333375 solid 0.1px;
+  border:none;
   border-top: 0;
  
  } 
