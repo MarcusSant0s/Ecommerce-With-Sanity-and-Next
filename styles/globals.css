@@ -912,7 +912,7 @@ span.text-red {
 
 
 .sticky {
-  position: fixed;
+  position: sticky;
   z-index: 10;
 }
 
