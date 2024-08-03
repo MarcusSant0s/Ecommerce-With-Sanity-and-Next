@@ -87,6 +87,7 @@ a {
   position: absolute;
   padding: 0;
   background-color: var(--bs-white);
+
 }
 
 .marquee-text {
@@ -1442,4 +1443,10 @@ a::after {
   border-top: 0;
  
  } 
+}
+.navbar {
+  position: absolute;
+  padding: 0 !important;
+  background-color: var(--bs-white);
+  
 }
