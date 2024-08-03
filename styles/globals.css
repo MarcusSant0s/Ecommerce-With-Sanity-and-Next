@@ -1434,7 +1434,9 @@ a::after {
 
  .nav--open{
   height: 55px;
-  margin-left: 10vw;
+  position: absolute;
+  top: 0;
+  left: 10vw;
   width: 80vw;
   display: flex;
   justify-content: center;
