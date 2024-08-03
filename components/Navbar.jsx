@@ -55,7 +55,7 @@ const Navbar = () => {
 
 
   return (
-    <div className='sticky'>
+    <>
       <nav className="navbar container-fluid  ">
         <div className="container-fluid ">
 
@@ -116,7 +116,7 @@ const Navbar = () => {
 
       {showCart && <Cart />}
 
-    </div>
+    </>
   )
 }
 
