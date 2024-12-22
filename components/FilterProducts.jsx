@@ -3,13 +3,10 @@
 import { client } from '@/lib/client';
 import { useState, useEffect } from 'react';
 
-const Filters = ({ onChange }) => {
+const Filters = ({ onChange, categories, subCategories, bathTypes }) => {
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   const [bathType, setBathType] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [subCategories, setSubCategories] = useState([]);
-  const [bathTypes, setBathTypes] = useState([]);
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [expanded, setExpanded] = useState({
@@ -27,23 +24,6 @@ const Filters = ({ onChange }) => {
   const toggleFilters = () => {
     setIsCollapsed((prev) => !prev);
   };
-
-  const fetchData = async () => { 
-      // Consulta para categorias
-      const categoryQuery = `*[_type == "category"]{
-        _id,
-        "title": category
-      }`;
-      const categoryData = await client.fetch(categoryQuery);
-      console.log("Categoria:", categoryData);
-      setCategories(categoryData);
-  
-  };
-  
-  
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const handleFilterChange = (filterType, value) => {
     const newFilter = [...filterType];
@@ -100,7 +80,7 @@ const Filters = ({ onChange }) => {
               {(expanded[id] || !window.matchMedia('(max-width: 768px)').matches) && (
                 <div className="space-y-2 mt-2">
                   {items.map((item) => (
-                    <div key={item.id} className="flex items-center">
+                    <div key={item._id} className="flex items-center">
                       <input
                         type="checkbox"
                         id={`${id}-${item.id}`}
@@ -165,4 +145,3 @@ const Filters = ({ onChange }) => {
 };
 
 export default Filters;
-

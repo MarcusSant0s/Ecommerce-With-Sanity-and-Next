@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Product } from '@/components';
 import Filters from '@/components/FilterProducts'; // Componente de filtros
 
-const ProductsList = ({ FirstProducts }) => {
+const ProductsList = ({ FirstProducts, categories, subCategories, bathTypes }) => {
   const [products, setProducts] = useState([...FirstProducts]);
   const [start, setStart] = useState(50);
   const [loading, setLoading] = useState(false);
@@ -13,8 +13,7 @@ const ProductsList = ({ FirstProducts }) => {
     subCategory: '',
     minPrice: 0,
     maxPrice: Infinity,
-    bathType:'',
-
+    bathType: '',
   });
   const limit = 20;
 
@@ -24,17 +23,17 @@ const ProductsList = ({ FirstProducts }) => {
       const query = new URLSearchParams({
         start: reset ? '0' : start.toString(),
         limit: limit.toString(),
-        ...(filters.category != '' && { category: filters.category }), // Evita categoria vazia
-        ...(filters.minPrice > 0 && { minPrice: filters.minPrice.toString() }), // Evita minPrice 0
-        ...(filters.maxPrice == Infinity ? null : filters.maxPrice.toString()), // Evita maxPrice Infinity
-        ...(filters.bathType != '' && { bathType: filters.bathType }), // Evita bathType vazio
-        ...(filters.subCategory.length > 0 && { subCategory: filters.subCategory.join(',') }), // Evita subcategorias vazias
+        ...(filters.category !== '' && { category: filters.category }),
+        ...(filters.minPrice > 0 && { minPrice: filters.minPrice.toString() }),
+        ...(filters.maxPrice === Infinity ? null : filters.maxPrice.toString()),
+        ...(filters.bathType !== '' && { bathType: filters.bathType }),
+        ...(filters.subCategory.length > 0 && { subCategory: filters.subCategory.join(',') }),
       });
-  
+
       const response = await fetch(`/api/products?${query.toString()}`);
-      console.log(`api/products?${query.toString()}`)
+      console.log(`api/products?${query.toString()}`);
       const newProducts = await response.json();
-  
+
       setProducts(reset ? newProducts : [...products, ...newProducts]);
       setStart(reset ? limit : start + limit);
     } catch (error) {
@@ -43,7 +42,6 @@ const ProductsList = ({ FirstProducts }) => {
       setLoading(false);
     }
   };
-  
 
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
@@ -56,7 +54,13 @@ const ProductsList = ({ FirstProducts }) => {
 
   return (
     <div>
-      <Filters onChange={handleFilterChange} />
+      {/* Passando as categorias, subcategorias e tipos de banho para o Filter */}
+      <Filters
+        onChange={handleFilterChange}
+        categories={categories}
+        subCategories={subCategories}
+        bathTypes={bathTypes}
+      />
       <div
         style={{ width: 'calc(100vw - 3vw)' }}
         className="grid max-[380px]:grid-cols-1 rows--height grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:p-2 md:gap-2 mx-auto border rounded-md border-dashed w-full h-max pt-2 gap-y-4"
@@ -86,4 +90,5 @@ const ProductsList = ({ FirstProducts }) => {
 };
 
 export default ProductsList;
+
 
