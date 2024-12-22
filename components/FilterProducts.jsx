@@ -28,8 +28,7 @@ const Filters = ({ onChange }) => {
     setIsCollapsed((prev) => !prev);
   };
 
-  const fetchData = async () => {
-    try {
+  const fetchData = async () => { 
       // Consulta para categorias
       const categoryQuery = `*[_type == "category"]{
         _id,
@@ -39,10 +38,6 @@ const Filters = ({ onChange }) => {
       console.log("Categoria:", categoryData);
       setCategories(categoryData);
   
-
-    } catch (error) {
-      console.error("Erro ao buscar dados:", error);
-    }
   };
   
   
