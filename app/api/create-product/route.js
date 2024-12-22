@@ -15,6 +15,19 @@
           const details = formData.get('details');
           const Quantity = parseInt(formData.get('Quantity')); // Convert to integer
       
+
+
+
+        // Gerar o slug manualmente
+        const slug = name
+        .toLowerCase() // Transformar para minúsculas
+        .replace(/[^a-z0-9\s-]/g, '') // Remover caracteres especiais
+        .trim() // Remover espaços extras no início e no final
+        .replace(/\s+/g, '-') // Substituir espaços por hífens
+        .replace(/-+/g, '-'); // Remover múltiplos hífens
+
+
+
           // Handle images - loop over keys dynamically
           const images = [];
           let imageIndex = 0;
@@ -63,6 +76,7 @@
           const newProduct = await client.create({
             _type: 'product',
             name,
+            slug,
             details,
             price: parseFloat(price),
             category: { _type: 'reference', _ref: category },

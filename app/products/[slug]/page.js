@@ -32,12 +32,11 @@ const ProductDetails = async ({params}) =>  {
  
 
 
-  return  (<>
+  return  (
+  <>
   <ProductDetailsComponent product={product}  />
   <PayWays />
   </>
-
-
   
   )
 
@@ -63,6 +62,3 @@ export async function generateStaticParams() {
     slug: product.slug.current
   }))
 }
-
-
- 

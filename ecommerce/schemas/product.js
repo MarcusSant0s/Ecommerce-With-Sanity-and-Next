@@ -24,8 +24,9 @@ export default {
         title: 'Slug',
         type: 'slug',
         options: {
-          source: 'name',
-          maxLength: 90,
+          source: 'name', // Gerar automaticamente o slug a partir do campo 'name'
+          maxLength: 90,  // Limitar o comprimento do slug
+          slugify: input => input.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, ''), // Personalize a lógica se necessário
         }
       },
       { 
