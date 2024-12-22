@@ -1,6 +1,6 @@
+'use client'
 
-  import React, { useEffect, useState } from "react";
-  import image from "next/image";
+  import React, { useEffect, useState } from "react"; 
   import { client, urlFor  } from "@/lib/client"; 
 import Image from "next/image";
 
