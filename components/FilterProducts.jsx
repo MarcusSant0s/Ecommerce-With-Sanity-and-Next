@@ -30,21 +30,37 @@ const Filters = ({ onChange }) => {
 
   const fetchData = async () => {
     try {
-      const categoryData = await client.fetch(`*[_type == "category"]`);
+      // Consulta para categorias
+      const categoryQuery = `*[_type == "category"]{
+        _id,
+        "title": category
+      }`;
+      const categoryData = await client.fetch(categoryQuery);
       console.log("Categoria:", categoryData);
-      setCategories(categoryData.map((cat) => ({ id: cat._id, title: cat.category })));
+      setCategories(categoryData);
   
-      const subCategoryData = await client.fetch(`*[_type == "subCategories"]`);
+      // Consulta para subcategorias
+      const subCategoryQuery = `*[_type == "subCategories"]{
+        _id,
+        "title": subCategories
+      }`;
+      const subCategoryData = await client.fetch(subCategoryQuery);
       console.log("Subcategoria:", subCategoryData);
-      setSubCategories(subCategoryData.map((subCat) => ({ id: subCat._id, title: subCat.subCategories })));
+      setSubCategories(subCategoryData);
   
-      const bathTypeData = await client.fetch(`*[_type == "bathType"]`);
+      // Consulta para tipos de banho
+      const bathTypeQuery = `*[_type == "bathType"]{
+        _id,
+        "title": name
+      }`;
+      const bathTypeData = await client.fetch(bathTypeQuery);
       console.log("Tipo de Banho:", bathTypeData);
-      setBathTypes(bathTypeData.map((bath) => ({ id: bath._id, title: bath.name })));
+      setBathTypes(bathTypeData);
     } catch (error) {
       console.error("Erro ao buscar dados:", error);
     }
   };
+  
   
   useEffect(() => {
     fetchData();

@@ -22,23 +22,8 @@ export default async function page({ params }) {
 
   
   let products = await client.fetch(query)
+  
   console.log(products)
-  // const headersList = await headers()
-  // const limit = headersList.get('limit')
-  // const page = headersList.get('page')
-
-  const queryTypes = `*[_type == "bathType"] | order(_createdAt desc) {
-    _id,
-    name,
-    description
-  }[0..50]`;
-  
-  let bathTypes = await client.fetch(queryTypes);
-  
-
-
-
-
 
   return (
  
