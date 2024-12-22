@@ -23,6 +23,8 @@ export default function InsertProducts({ categories, subCategories, bathTypes, p
     alert(`${message}: ${error.message}`);
   };
 
+
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -166,7 +168,7 @@ export default function InsertProducts({ categories, subCategories, bathTypes, p
           >
             <option value="">Selecione um banho</option>
             {bathTypes.map((bathType) => (
-              <option key={bathType._id} value={bathType.id}>
+              <option key={bathType._id} value={bathType._id}>
                 {bathType.title}
               </option>
             ))}
@@ -185,31 +187,33 @@ export default function InsertProducts({ categories, subCategories, bathTypes, p
           >
             <option value="">Selecione uma categoria</option>
             {categories.map((category) => (
-              <option key={category._id} value={category.id}>
+              <option key={category._id} value={category._id}>
                 {category.title}
               </option>
             ))}
           </select>
         </div>
 
-        {/* Subcategorias */}
-        <div>
-          <label className="block font-semibold mb-1">Subcategorias</label>
-          <div className="space-y-2">
-            {subCategories.map((subCategory) => (
-              <label key={subCategory._id} className="flex items-center">
-                <input
-                  type="checkbox"
-                  value={subCategory.id}
-                  checked={formData.subCategories.includes(subCategory.id)}
-                  onChange={() => handleCheckboxChange("subCategories", subCategory.id)}
-                  className="mr-2"
-                />
-                {subCategory.title}
-              </label>
-            ))}
-          </div>
+      {/* Subcategorias */}
+      <div>
+        <label className="block font-semibold mb-1">Subcategorias</label>
+        <div className="space-y-2">
+          {subCategories.map((subCategory) => (
+            <label key={subCategory._id} className="flex items-center">
+              <input
+                type="checkbox"
+                value={subCategory._id}
+                checked={formData.subCategories.includes(subCategory._id)} // Verifica se a subcategoria está selecionada
+                onChange={() => handleCheckboxChange("subCategories", subCategory._id)} // Atualiza o estado
+                className="mr-2"
+              />
+              {subCategory.title}
+            </label>
+          ))}
         </div>
+      </div>
+
+
 
         {/* Imagem e Desconto */}
         <div>
